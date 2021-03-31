@@ -21,7 +21,7 @@ Como la aplicación que se desarrollara es una pagina web, estas capas tendrán ca
 
 Una aplicación web recogerá los datos del usuario (Primera Capa), los enviar\'a al servidor que ejecutara el programa (Segunda y Tercera Capa) y cuyo resultado sera presentado al usuario en la interfaz Gráfica (Primera Capa nuevamente).
 
-![](img/3cbd.png)
+![](img/1bd.png)
 
 #### Ventajas:
 
