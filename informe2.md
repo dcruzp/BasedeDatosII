@@ -45,11 +45,28 @@ La **desventaja fundamental**  de la arquitectura de Tres Capas es que los servi
  
 #### Ejemplo:
 
- El usuario desea saber, dado un jugador específico, a que clanes se puede unir; primero debe rellenar cada uno de los objetos de interés que desee consultar (en este caso sería el jugador y los clanes) a través de la interfaz visual de la página web que le ayudará a rellenar cada uno de estos de una manera mas fácil.  Estos campos a rellenar no tendrán carácter obligatorio para poder completar el formulario, pero al menos uno debe rellenarse. 
+El usuario desea saber, dado un jugador específico, a que clanes se puede unir; primero 
+debe rellenar cada uno de los objetos de interés que desee consultar (en este caso sería 
+el jugador y los clanes) a través de la interfaz visual de la página web que le ayudará 
+a rellenar cada uno de estos de una manera mas fácil.  Algunos de estos campos a rellenar 
+no tendrán carácter obligatorio para poder completar el formulario, sin embargo en el 
+ejemplo en cuestión es necesario rellenar el campo de jugador para saber a partir de este, 
+a cuáles clanes puede unirse. 
  
-  Luego de que el usuario complete el formulario, este pasará por un controlador que es el encargado de entender que es  lo que se solicita. Tomando el ejemplo en cuestión, el controlador detectará que los objetos a los que tiene que acceder en la base de datos son  los que pertenecen a la información relacionada con los jugadores y a los clanes. Por lo tanto el controlador convertirá esta información en un lenguaje  el cual  podrá acceder directamente a la base de datos y obtener los resultados requeridos. 
  
- Pero el resultado que la base de datos entregará no podrá ser la respuesta deseada por el usuario debido a que este, debe ser procesado por el controlador nuevamente para poder conformar una respuesta la cual el usuario podrá entender, en este caso debe devolver todos los clanes que tengan la cantidad de trofeos de entrada menor o igual que la cantidad de trofeos obtenidos por el jugador en cuestión. El proceso se describe de la siguiente manera: 
+
+Luego de que el usuario complete el formulario, este pasará por un controlador que es el 
+encargado de entender que es  lo que se solicita. Tomando el ejemplo en cuestión, el 
+controlador detectará que los objetos a los que tiene que acceder en la base de datos 
+son  los que pertenecen a la información relacionada con los jugadores y a los clanes. 
+Por lo tanto el controlador verificará esta información y se lo enviará a la WEB API para 
+que esta pueda acceder directamente a la información requerida por el usuario en la base 
+de datos. Estos resultados nuevamente será procesada por el controlador para poder enviar 
+una respuesta la cual el usuario podrá entender, en el ejemplo en cuestión debe devolver 
+todos los clanes que tengan la cantidad de trofeos de entrada menor o igual que la cantidad 
+de trofeos obtenidos por el jugador en cuestión. El proceso se describe de la siguiente 
+manera:
+
  
 ![](img/2bd.png)
 
@@ -76,7 +93,20 @@ Si un usuario quisiera tener información acerca de los 10 mejores usuarios (con 
 
 ![](img/flujodedatos.jpg)
 
-Vamos a usar Entity Framework para el trabajo con la base de datos y para el mapeo de los datos vamos a utilizar Automapper que es un framework que nos va a facilitar el trabajo en la API. El uso de todas estas tecnologías están bien documentadas y bastante difundidas.
+
+##### Aspectos Generales y procesamiento de la información 
+
+La aplicación la vamos a desarrollar en C# con NetCore. Como ORM vamos a usar EntityFramework. para el manejo de la 
+base de datos para (Crear, Actualizar, Consultar y Borrar registros de la base de datos). 
+
+Para crear la base de datos vamos a usar ***Microsoft SQL Server Management Studio***, por la facilidad que nos brinda 
+de forma gráfica al crear la base de datos. (es decir que no vamos a usar la filosofía de *"Code First"* 
+para la creación de la base de datos). 
+
+Para el desarrollo de la aplicación gráfica vamos a usar React.(Es decir para el frontend).
+
+De forma general lo que queremos es  crear una Web API y hosterla en un servidor. para poder acceder desde un navegador 
+cualquiera a la aplicación.  
 
 #### Funcionalidades de los usuarios y esquema de Navegación 
 
@@ -90,8 +120,6 @@ Este se encarga de otorgar privilegios y accesos especiales a los usuarios comun
 
 - Crear Usuarios (comunes y con privilegios de administrador)
 - Eliminar usuarios 
-- Crear Tablas 
-- Borrar Tablas
 - Consultar tablas 
 - Modificar (borrar , actualizar y añadir  registros )
 
