@@ -101,14 +101,16 @@ base de datos para (Crear, Actualizar, Consultar y Borrar registros de la base d
 
 Para crear la base de datos vamos a usar ***Microsoft SQL Server Management Studio***, por la facilidad que nos brinda 
 de forma gráfica al crear la base de datos. (es decir que no vamos a usar la filosofía de *"Code First"* 
-para la creación de la base de datos). 
+para la creación de la misma). 
 
-Para el desarrollo de la aplicación gráfica vamos a usar React.(Es decir para el frontend).
+Es decir para el backend vamos a trabajar con dotnet (C#). Para el desarrollo de la 
+aplicación gráfica vamos a usar React.(Es decir para el frontend).
 
-De forma general lo que queremos es  crear una Web API y hosterla en un servidor. para poder acceder desde un navegador 
+De forma general lo que queremos es  crear una Web API y ponerla en un servidor. para poder acceder desde un navegador 
 cualquiera a la aplicación.  
 
 #### Funcionalidades de los usuarios y esquema de Navegación 
+
 
 La aplicación va a tener fundamentalmente dos Roles donde cada uno va a tener privilegios específicos.
 
@@ -133,3 +135,17 @@ Interactúan con las UI y esta procesa todos los datos para hacer consultas a la 
 - Crear tablas a su esquema de usuarios 
 - Crear vistas en su esquema de usuarios 
 - Crear secuencias y procedimientos en su esquema de usuarios 
+
+Los usuarios comunes de la aplicación van a poder acceder a información útil para el uso de esta 
+como es Conocer los mejores jugadores que participan en una guerra, conocer las cartas mas populares dentro de cada clan existente. 
+
+Por ejemplo un usuario común podría conocer si un jugador se podría unir a un clan determinado , sabiendo las restricciones del clan 
+para unirse a este. Un usuario común también podría saber cual es la carta mas donada en una región dada. 
+Los usuarios con roles de administrador podrían modificar registros de una tabla, así como hacer
+consultas que haría cualquier usuario común de la aplicación.
+
+Los usuarios con roles de administradores podrían borrar de la base de datos un usuario 
+con todos sus datos almacenados , pero nunca va a poder modificar las base de  datos, 
+es decir cambiar el tipo de datos de un campo en un tabla dada, este tipo de acciones 
+solo es posible hacerlas desde la actualización de la aplicación que es tarea de los 
+programadores y el equipo de trabajo que desarrolla y mantiene la aplicación. 
