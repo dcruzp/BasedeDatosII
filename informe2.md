@@ -59,9 +59,8 @@ Luego de que el usuario complete el formulario, este pasará por un controlador q
 encargado de entender que es  lo que se solicita. Tomando el ejemplo en cuestión, el 
 controlador detectará que los objetos a los que tiene que acceder en la base de datos 
 son  los que pertenecen a la información relacionada con los jugadores y a los clanes. 
-Por lo tanto el controlador verificará esta información y se lo enviará a la WEB API para 
-que esta pueda acceder directamente a la información requerida por el usuario en la base 
-de datos. Estos resultados nuevamente será procesada por el controlador para poder enviar 
+Por lo tanto el controlador verificará esta información para que esta pueda ser procesada por 
+las demas capas y tomar las desiciones que correspondan en la aplicación . Estos resultados nuevamente será procesada por el controlador para poder enviar 
 una respuesta la cual el usuario podrá entender, en el ejemplo en cuestión debe devolver 
 todos los clanes que tengan la cantidad de trofeos de entrada menor o igual que la cantidad 
 de trofeos obtenidos por el jugador en cuestión. El proceso se describe de la siguiente 
@@ -131,10 +130,10 @@ Interactúan con las UI y esta procesa todos los datos para hacer consultas a la 
 
 **Privilegios de los Usuarios**
 
-- Conectarse a la Base de datos 
-- Crear tablas a su esquema de usuarios 
-- Crear vistas en su esquema de usuarios 
-- Crear secuencias y procedimientos en su esquema de usuarios 
+- Listar los jugadores que hay en la base de datos. 
+- Listar los clanes que hay en la base de datos.
+- Poder ver los mejores jugadores y clanes ordenados por cantidad de trofeos obtenidos.
+- Poder buscar Jugadores , guerras y clanes por si identificador (o puede ser su nombre).  
 
 Los usuarios comunes de la aplicación van a poder acceder a información útil para el uso de esta 
 como es Conocer los mejores jugadores que participan en una guerra, conocer las cartas mas populares dentro de cada clan existente. 
@@ -172,11 +171,11 @@ En la parte derecha del menú principal aparecerán una serie de barras de búsqued
 propios de cada apartado, por ejemplo si queremos conocer los datos de un jugador y sabemos el id del mismo podemos poner su id en el campo de búsqueda y automáticamente se nos mostrara otra pantalla donde se van a poder ver todos los 
 atributos de un jugador en específico. Los elementos de búsqueda que se van a mostrar en este menú principal, son los siguientes: 
 
- - buscar Jugador 
- - buscar Clan 
- - buscar Desafío 
- - buscar Guerra 
- - buscar Carta 
+ - Buscar Jugador 
+ - Buscar Clan 
+ - Buscar Desafío 
+ - Buscar Guerra 
+ - Buscar Carta 
 
 Este apartado del menú principal se vería de la siguiente manera: 
 
