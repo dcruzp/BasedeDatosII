@@ -149,3 +149,69 @@ con todos sus datos almacenados , pero nunca va a poder modificar las base de  d
 es decir cambiar el tipo de datos de un campo en un tabla dada, este tipo de acciones 
 solo es posible hacerlas desde la actualización de la aplicación que es tarea de los 
 programadores y el equipo de trabajo que desarrolla y mantiene la aplicación. 
+
+
+
+### Esquema de Navegación
+
+Nuestra aplicación tendrá un menu principal para el cual sera el punto de partida 
+para navegar por nuestra aplicación. Es Menu principal tendría una serie de aspectos los cuales se describen abajo: 
+
+ - Login 
+ - Top Player
+ - Top Clanes 
+ - Cartas 
+ - Desafíos 
+ - Guerra de Clanes 
+ - Log Out 
+
+Cada uno de estos aspectos serán puentes a otras pantallas que responden a cada uno de los apartados que se describen 
+entonces.
+
+En la parte derecha del menu principal aparecerán una serie de barras de barras de búsquedas donde teniendo el Identificador (**id**) de cada uno de los elementos que se describen vamos a poder acceder a datos 
+propios de cada apartado, por ejemplo si queremos conocer los datos de un jugador y sabemos el id del mismo podemos poner su id en el campo de búsqueda y automáticamente se nos mostrara otra pantalla donde se van a poder ver todos los 
+atributos de un jugador en específico. Los elementos de búsqueda que se van a mostrar en este menu principal, son los siguientes: 
+
+ - buscar Jugador 
+ - buscar Clan 
+ - buscar Desafió 
+ - buscar Guerra 
+ - buscar Carta 
+
+El apartado del menu principal se vería de la siguiente manera: 
+
+![](img/esquemadenavegacion1.jpg)
+
+
+Por Ejemplo, si una ves estando en el menu principal queremos ver cuales son los mejores jugadores  entonces nos paramos en sobre el apartado de  Top Player y damos un click, esto nos va a mostrar otra 
+pantalla donde veremos un listado de los 10 mejores jugadores ordenado descendente-mente. Cada uno de los record nos daría la siguiente información: 
+   - Nombre del Jugador 
+   - Nivel 
+   - Cantidad de Trofeos  
+
+Este apartado de Top Jugadores se vería de la siguiente manera: 
+
+ 
+ ![](img/esquemadenavegacion2.jpg)
+
+Una vez que estemos en este apartado, se puede saber todos los datos de un jugador en especifico si damos click encima de la barra que muestra los datos de este jugador, 
+Por ejemplo si damos click encima de la barra que nos muestra los datos de ***Player 1*** la aplicación nos llevaría hasta otro apartado donde se mostrarían todo los datos relacionados con este jugador en especifico. 
+este apartado que describimos se vería de la siguiente manera: 
+
+ ![](img/esquemadenavegacion3.jpg)
+
+Desde cada uno de los apartados se podría regresar hacia al apartado anterior. y así sucesivamente hasta el menu principal. 
+
+Lo que se describió anteriormente para poder navegar y ver los ***Top Players***
+se puede hacer para cada uno de los elementos que aparecen a la izquierda en el menu principal. 
+Es decir para los *'Top Clanes'* , *'Cartas'* , *'Desafíos'* y  *'Guerra de Clanes'*. 
+
+
+Igual para las búsquedas que aparecen a la derecha en el menu principal. 
+
+
+
+
+ 
+
+ 
