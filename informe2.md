@@ -154,8 +154,8 @@ programadores y el equipo de trabajo que desarrolla y mantiene la aplicación.
 
 ### Esquema de Navegación
 
-Nuestra aplicación tendrá un menu principal para el cual sera el punto de partida 
-para navegar por nuestra aplicación. Es Menu principal tendría una serie de aspectos los cuales se describen abajo: 
+Nuestra aplicación tendrá un menú principal para el cual será el punto de partida 
+para navegar por nuestra aplicación. Este Menú principal tendría una serie de aspectos los cuales se describen abajo: 
 
  - Login 
  - Top Player
@@ -168,23 +168,24 @@ para navegar por nuestra aplicación. Es Menu principal tendría una serie de aspe
 Cada uno de estos aspectos serán puentes a otras pantallas que responden a cada uno de los apartados que se describen 
 entonces.
 
-En la parte derecha del menu principal aparecerán una serie de barras de barras de búsquedas donde teniendo el Identificador (**id**) de cada uno de los elementos que se describen vamos a poder acceder a datos 
+En la parte derecha del menú principal aparecerán una serie de barras de búsquedas donde teniendo el Identificador (**id**) de cada uno de los elementos que se describen vamos a poder acceder a datos 
 propios de cada apartado, por ejemplo si queremos conocer los datos de un jugador y sabemos el id del mismo podemos poner su id en el campo de búsqueda y automáticamente se nos mostrara otra pantalla donde se van a poder ver todos los 
-atributos de un jugador en específico. Los elementos de búsqueda que se van a mostrar en este menu principal, son los siguientes: 
+atributos de un jugador en específico. Los elementos de búsqueda que se van a mostrar en este menú principal, son los siguientes: 
 
  - buscar Jugador 
  - buscar Clan 
- - buscar Desafió 
+ - buscar Desafío 
  - buscar Guerra 
  - buscar Carta 
 
-El apartado del menu principal se vería de la siguiente manera: 
+Este apartado del menú principal se vería de la siguiente manera: 
 
 ![](img/esquemadenavegacion1.jpg)
 
 
-Por Ejemplo, si una ves estando en el menu principal queremos ver cuales son los mejores jugadores  entonces nos paramos en sobre el apartado de  Top Player y damos un click, esto nos va a mostrar otra 
+Entonces una vez estando estando en el menú principal si queremos ver cuales son los mejores jugadores nos desplazamos al apartado de  *Top Player* y damos un click, esto nos va a mostrar otra 
 pantalla donde veremos un listado de los 10 mejores jugadores ordenado descendente-mente. Cada uno de los record nos daría la siguiente información: 
+
    - Nombre del Jugador 
    - Nivel 
    - Cantidad de Trofeos  
@@ -194,24 +195,45 @@ Este apartado de Top Jugadores se vería de la siguiente manera:
  
  ![](img/esquemadenavegacion2.jpg)
 
-Una vez que estemos en este apartado, se puede saber todos los datos de un jugador en especifico si damos click encima de la barra que muestra los datos de este jugador, 
-Por ejemplo si damos click encima de la barra que nos muestra los datos de ***Player 1*** la aplicación nos llevaría hasta otro apartado donde se mostrarían todo los datos relacionados con este jugador en especifico. 
+Una vez que estemos en este apartado, se puede saber todos los datos de un jugador en específico si damos click encima de la barra que muestra los datos de este jugador, 
+Por ejemplo si damos click encima de la barra que nos muestra los datos de ***Player 1*** la aplicación nos llevaría hasta otro apartado donde se mostrarían todo los datos relacionados con este jugador en específico. 
 este apartado que describimos se vería de la siguiente manera: 
 
  ![](img/esquemadenavegacion3.jpg)
 
-Desde cada uno de los apartados se podría regresar hacia al apartado anterior. y así sucesivamente hasta el menu principal. 
+Desde cada uno de los apartados se podría regresar hacia al apartado anterior. y así sucesivamente hasta el menú principal. 
 
 Lo que se describió anteriormente para poder navegar y ver los ***Top Players***
-se puede hacer para cada uno de los elementos que aparecen a la izquierda en el menu principal. 
-Es decir para los *'Top Clanes'* , *'Cartas'* , *'Desafíos'* y  *'Guerra de Clanes'*. 
+se puede hacer para cada uno de los elementos que aparecen a la izquierda en el menú principal. 
+Es decir para los *'Top Clanes'* , *Cartas* , *Desafíos* y  *Guerra de Clanes*. 
 
 
-Igual para las búsquedas que aparecen a la derecha en el menu principal. 
+Igual para las búsquedas que aparecen a la derecha en el menú principal. se rellena el campo con los 
+datos que requiere la búsqueda y se muestra el apartado correspondiente con los resultados obtenidos mediante la 
+consulta a la base de datos.
+
+
+Conjugando las distintas formas de desplazarse y ver informacion de la base de datos desde la aplicaciones podemos ver los resultados de 
+cada una de las consultas que se nos propone. 
+
+Por ejemplo si quesieramos conocer el clan con mejor desempeño durante las guerras por región del mundo, es decir,
+por cada región obtener el clan con mayor cantidad de trofeos.
+Nos iriamos al apartado de Top Clanes y una ves ahi tendraimos listado los mejores clanes 
+ordenados de forma descendente por la cantidad de trofeos obtenidos. 
+Ahora si quisieramos saber los mejores clanes de una region en específico (supongamos la región *A*), podriamos escoger que se nos listaran solamente los 
+clanes de la region a la cual deseamos conocer en este caso la region *A*. Este ejemplo se vería en nuestra aplicación de la siguiente manera: 
+
+ ![](img/esquemadenavegacion4.jpg)
+
+Y así podríamos hacer con las demás consultas que se nos proponen en la orden del proyecto.
+como son conocer los mejores jugadores que participan en una guerra, etc. 
 
 
 
 
- 
 
- 
+
+
+
+
+
