@@ -1,8 +1,7 @@
 # Informe #2 Diseño de la Aplicación  
 
 
-### integrantes 
-
+### Integrantes:
 - Daniel de la Cruz Prieto C-311
 - Camilo Rodriguez Velázquez C-312
 - Frank Adrian Perez Moralez C-311   
@@ -60,7 +59,7 @@ encargado de entender que es  lo que se solicita. Tomando el ejemplo en cuestión
 controlador detectará que los objetos a los que tiene que acceder en la base de datos 
 son  los que pertenecen a la información relacionada con los jugadores y a los clanes. 
 Por lo tanto el controlador verificará esta información para que esta pueda ser procesada por 
-las demas capas y tomar las desiciones que correspondan en la aplicación . Estos resultados nuevamente será procesada por el controlador para poder enviar 
+las demas capas. Estos resultados nuevamente será procesados para poder enviar 
 una respuesta la cual el usuario podrá entender, en el ejemplo en cuestión debe devolver 
 todos los clanes que tengan la cantidad de trofeos de entrada menor o igual que la cantidad 
 de trofeos obtenidos por el jugador en cuestión. El proceso se describe de la siguiente 
@@ -81,14 +80,14 @@ El siguiente diagrama muestra como funcionaría el flujo de datos de nuestra API
 ![](img/diagramadeflujo.jpg)
 
 
-###### Ejemplo 
+##### Ejemplo 
 
 El usuario hace un request a la API. Esta valida que el usuario tenga los privilegios necesarios para
-poder acceder a la información que esta pidiendo en el momento que hace el request. Entonces si la aplicación
-determina  que el usuario tiene los privilegios requeridos para acceder a este tipo de información entonces se le devuelven los 
-resultado de las base de datos. Si el usuario no tiene los privilegios necesarios entonces el server devuelve un "Bad Request". 
+poder acceder a la información que está pidiendo en el momento que hace el request. Entonces si la aplicación
+determina  que el usuario tiene los privilegios requeridos para acceder a este tipo de información, se le devuelven los 
+resultados de la base de datos. Si el usuario no tiene los privilegios necesarios el server devuelve un "Bad Request". 
 
-Si un usuario quisiera tener información acerca de los 10 mejores usuarios (con mayor cantidad de puntos , ordenados de mayor a menor ) el diagrama muestra como a groso modo se realizaría el flujo de datos para nuestra app 
+Si un usuario quisiera tener información acerca de los 10 mejores usuarios (con mayor cantidad de puntos , ordenados de mayor a menor ) el diagrama muestra como se realizaría el flujo de datos para nuestra app 
 
 ![](img/flujodedatos.jpg)
 
@@ -102,16 +101,15 @@ Para crear la base de datos vamos a usar ***Microsoft SQL Server Management Stud
 de forma gráfica al crear la base de datos. (es decir que no vamos a usar la filosofía de *"Code First"* 
 para la creación de la misma). 
 
-Es decir para el backend vamos a trabajar con dotnet (C#). Para el desarrollo de la 
+Para el backend vamos a trabajar con dotnet (C#) y para el desarrollo de la 
 aplicación gráfica vamos a usar React.(Es decir para el frontend).
 
-De forma general lo que queremos es  crear una Web API y ponerla en un servidor. para poder acceder desde un navegador 
-cualquiera a la aplicación.  
+De forma general lo que queremos es  crear una Web API y ponerla en un servidor, para acceder a la aplicación desde un navegador cualquiera.  
 
 #### Funcionalidades de los usuarios y esquema de Navegación 
 
 
-La aplicación va a tener fundamentalmente dos Roles donde cada uno va a tener privilegios específicos.
+La aplicación va a tener fundamentalmente dos roles donde cada uno va a tener privilegios específicos.
 
 Un rol fundamental es el de Administrador de la Base de Datos (DBA): Este va a ser un usuario que tiene un alto nivel de accesibilidad. Tiene la capacidad de administrar las Base de Datos y los datos de los usuarios. 
 Este se encarga de otorgar privilegios y accesos especiales a los usuarios comunes de la aplicación. Por lo tanto va a poder crear nuevas tablas y registros en la base de datos. Además de tener el poder de eliminar a cualquier usuario o modificar sus datos. 
@@ -124,19 +122,21 @@ Este se encarga de otorgar privilegios y accesos especiales a los usuarios comun
 - Consultar tablas 
 - Modificar (borrar , actualizar y añadir  registros )
 
+
 **Usuarios**
 
-Interactúan con las UI y esta procesa todos los datos para hacer consultas a la aplicación 
+El otro rol que va a tener es el de usuario común que hace uso de la aplicación, estos
+interactúan con las UI y esta procesa todos los datos para hacer consultas a la aplicación 
 
 **Privilegios de los Usuarios**
 
 - Listar los jugadores que hay en la base de datos. 
 - Listar los clanes que hay en la base de datos.
 - Poder ver los mejores jugadores y clanes ordenados por cantidad de trofeos obtenidos.
-- Poder buscar Jugadores , guerras y clanes por si identificador (o puede ser su nombre).  
+- Poder buscar Jugadores , guerras y clanes por su identificador (o puede ser su nombre).  
 
 Los usuarios comunes de la aplicación van a poder acceder a información útil para el uso de esta 
-como es Conocer los mejores jugadores que participan en una guerra, conocer las cartas mas populares dentro de cada clan existente. 
+como es conocer los mejores jugadores que participan en una guerra, conocer las cartas mas populares dentro de cada clan existente. 
 
 Por ejemplo un usuario común podría conocer si un jugador se podría unir a un clan determinado , sabiendo las restricciones del clan 
 para unirse a este. Un usuario común también podría saber cual es la carta mas donada en una región dada. 
@@ -153,8 +153,8 @@ programadores y el equipo de trabajo que desarrolla y mantiene la aplicación.
 
 ### Esquema de Navegación
 
-Nuestra aplicación tendrá un menú principal para el cual será el punto de partida 
-para navegar por nuestra aplicación. Este Menú principal tendría una serie de aspectos los cuales se describen abajo: 
+Nuestra aplicación tendrá un menú principal el cual será el punto de partida 
+para navegar en la aplicación. Este Menú principal tendría una serie de aspectos los cuales se describen abajo: 
 
  - Login 
  - Top Player
@@ -164,11 +164,10 @@ para navegar por nuestra aplicación. Este Menú principal tendría una serie de as
  - Guerra de Clanes 
  - Log Out 
 
-Cada uno de estos aspectos serán puentes a otras pantallas que responden a cada uno de los apartados que se describen 
-entonces.
+Cada uno de estos aspectos serán links a otras pantallas que responden a cada uno de los apartados que se describen.
 
 En la parte derecha del menú principal aparecerán una serie de barras de búsquedas donde teniendo el Identificador (**id**) de cada uno de los elementos que se describen vamos a poder acceder a datos 
-propios de cada apartado, por ejemplo si queremos conocer los datos de un jugador y sabemos el id del mismo podemos poner su id en el campo de búsqueda y automáticamente se nos mostrara otra pantalla donde se van a poder ver todos los 
+propios de cada apartado, por ejemplo si queremos conocer los datos de un jugador y sabemos el id del mismo podemos poner su id en el campo de búsqueda y automáticamente se nos mostrará otra pantalla donde se van a poder ver todos los 
 atributos de un jugador en específico. Los elementos de búsqueda que se van a mostrar en este menú principal, son los siguientes: 
 
  - Buscar Jugador 
@@ -182,8 +181,8 @@ Este apartado del menú principal se vería de la siguiente manera:
 ![](img/esquemadenavegacion1.jpg)
 
 
-Entonces una vez estando estando en el menú principal si queremos ver cuales son los mejores jugadores nos desplazamos al apartado de  *Top Player* y damos un click, esto nos va a mostrar otra 
-pantalla donde veremos un listado de los 10 mejores jugadores ordenado descendente-mente. Cada uno de los record nos daría la siguiente información: 
+Entonces una vez que estemos en el menú principal, si queremos ver cuales son los mejores jugadores nos desplazamos al apartado de  *Top Player* y damos un click, esto nos va a mostrar otra 
+pantalla donde veremos un listado de los 10 mejores jugadores ordenado descendentemente. Cada uno de los registros nos daría la siguiente información: 
 
    - Nombre del Jugador 
    - Nivel 
@@ -212,20 +211,20 @@ datos que requiere la búsqueda y se muestra el apartado correspondiente con los 
 consulta a la base de datos.
 
 
-Conjugando las distintas formas de desplazarse y ver informacion de la base de datos desde la aplicaciones podemos ver los resultados de 
+Conjugando las distintas formas de desplazarse y ver información de la base de datos desde la aplicaciones podemos ver los resultados de 
 cada una de las consultas que se nos propone. 
 
-Por ejemplo si quesieramos conocer el clan con mejor desempeño durante las guerras por región del mundo, es decir,
+Por ejemplo si quisieramos conocer el clan con mejor desempeño durante las guerras por región del mundo, es decir,
 por cada región obtener el clan con mayor cantidad de trofeos.
-Nos iriamos al apartado de Top Clanes y una ves ahi tendraimos listado los mejores clanes 
+Nos iríamos al apartado de Top Clanes y una vez ahi tendríamos listado los mejores clanes 
 ordenados de forma descendente por la cantidad de trofeos obtenidos. 
-Ahora si quisieramos saber los mejores clanes de una region en específico (supongamos la región *A*), podriamos escoger que se nos listaran solamente los 
-clanes de la region a la cual deseamos conocer en este caso la region *A*. Este ejemplo se vería en nuestra aplicación de la siguiente manera: 
+Ahora si quisieramos saber los mejores clanes de una región en específico (supongamos la región *A*), podríamos escoger que se nos listaran solamente los 
+clanes de la región a la cual deseamos conocer, en este caso la región *A*. Este ejemplo se vería en nuestra aplicación de la siguiente manera: 
 
  ![](img/esquemadenavegacion4.jpg)
 
-Y así podríamos hacer con las demás consultas que se nos proponen en la orden del proyecto.
-como son conocer los mejores jugadores que participan en una guerra, etc. 
+Y así podríamos hacer con las demás consultas que se nos proponen en la orden del proyecto,
+como por ejemplo, conocer los mejores jugadores que participan en una guerra, etc. 
 
 
 
