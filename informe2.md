@@ -59,8 +59,8 @@ encargado de entender que es  lo que se solicita. Tomando el ejemplo en cuestión
 controlador detectará que los objetos a los que tiene que acceder en la base de datos 
 son  los que pertenecen a la información relacionada con los jugadores y a los clanes. 
 Por lo tanto el controlador verificará esta información para que esta pueda ser procesada por 
-las demas capas. Estos resultados nuevamente será procesados para poder enviar 
-una respuesta la cual el usuario podrá entender, en el ejemplo en cuestión debe devolver 
+las demas capas. Estos resultados nuevamente serán procesados para poder enviar 
+una respuesta, la cual el usuario podrá entender, en el ejemplo en cuestión debe devolver 
 todos los clanes que tengan la cantidad de trofeos de entrada menor o igual que la cantidad 
 de trofeos obtenidos por el jugador en cuestión. El proceso se describe de la siguiente 
 manera:
@@ -182,7 +182,7 @@ Este apartado del menú principal se vería de la siguiente manera:
 
 
 Entonces una vez que estemos en el menú principal, si queremos ver cuales son los mejores jugadores nos desplazamos al apartado de  *Top Player* y damos un click, esto nos va a mostrar otra 
-pantalla donde veremos un listado de los 10 mejores jugadores ordenado descendentemente. Cada uno de los registros nos daría la siguiente información: 
+pantalla donde veremos un listado de los 10 mejores jugadores ordenados descendentemente. Cada uno de los registros nos daría la siguiente información: 
 
    - Nombre del Jugador 
    - Nivel 
@@ -216,15 +216,15 @@ cada una de las consultas que se nos propone.
 
 Por ejemplo si quisieramos conocer el clan con mejor desempeño durante las guerras por región del mundo, es decir,
 por cada región obtener el clan con mayor cantidad de trofeos.
-Nos iríamos al apartado de Top Clanes y una vez ahi tendríamos listado los mejores clanes 
+Nos iríamos al apartado de Top Clanes y una vez ahí tendríamos listado los mejores clanes 
 ordenados de forma descendente por la cantidad de trofeos obtenidos. 
-Ahora si quisieramos saber los mejores clanes de una región en específico (supongamos la región *A*), podríamos escoger que se nos listaran solamente los 
+Ahora si quisíeramos saber los mejores clanes de una región en específico (supongamos la región *A*), podríamos escoger que se nos listaran solamente los 
 clanes de la región a la cual deseamos conocer, en este caso la región *A*. Este ejemplo se vería en nuestra aplicación de la siguiente manera: 
 
  ![](img/esquemadenavegacion4.jpg)
 
 Y así podríamos hacer con las demás consultas que se nos proponen en la orden del proyecto,
-como por ejemplo, conocer los mejores jugadores que participan en una guerra, etc. 
+como por ejemplo conocer los mejores jugadores que participan en una guerra, etc. 
 
 
 
